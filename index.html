@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HarmoGraph - Chord Text to Score</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- OpenSheetMusicDisplay CDN -->
+    <script src="https://unpkg.com/opensheetmusicdisplay@1.8.9/build/opensheetmusicdisplay.min.js"></script>
+    <!-- Pyodide CDN -->
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">HarmoGraph</div>
+        <p>Text to MusicXML Converter (Serverless)</p>
+    </header>
+
+    <main>
+        <section class="input-section">
+            <div id="statusMessage" style="color: var(--primary); font-weight: bold; margin-bottom: 0.5rem;">Loading
+                Python environment...</div>
+            <textarea id="chordInput" placeholder="Enter chords here (e.g. C G Am F)..."
+                disabled>AbM7 G7 Cm7 Eb7 AbM7 G7 Cm7 Eb7</textarea>
+            <div class="controls">
+                <button id="testDataBtn" class="secondary-btn" style="margin-right: 1rem;">Load Test Data</button>
+                <button id="generateBtn" class="primary-btn" disabled>Initialize Engine...</button>
+            </div>
+        </section>
+
+        <section class="output-section">
+            <div id="osmdCanvas"></div>
+            <div id="downloadArea" style="display:none; margin-top: 1rem;">
+                <a id="downloadLink" href="#" download="score.musicxml" class="secondary-btn">Download MusicXML</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

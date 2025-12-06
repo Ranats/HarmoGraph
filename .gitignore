@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+*$py.class
+import music21
+.gemini/
+.agent/
+*.log
+.DS_Store
